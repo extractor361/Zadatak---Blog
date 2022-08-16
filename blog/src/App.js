@@ -58,7 +58,7 @@ this.setState({blogovi:niz});
         <Unos  submit={this.submit} promjena1={this.promjena1} promjena2={this.promjena2}  promjena3={this.promjena3}
         title={this.state.naziv} text={this.state.tekst} author={this.state.autor}
         />
-        <div style={{display:'flex',flexDirection:'row'}}>
+        <div className="vju">
         <Blogovi brisi={this.brisi} niz={this.state.blogovi} />
 
         </div></div>
