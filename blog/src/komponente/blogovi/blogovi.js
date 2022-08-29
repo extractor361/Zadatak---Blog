@@ -18,6 +18,7 @@ function Blogovi(props) {
       <h3>{blog.naziv}</h3>
       <p className='paragraf'>{blog.tekst}</p>
       <p>posted by {blog.autor}</p>
+      <p>Datum {blog.datum}</p>
 
       </div>)})}</div>
   )

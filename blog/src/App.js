@@ -1,3 +1,4 @@
+
 import Blogovi from "./komponente/blogovi/blogovi";
 import Unos from "./komponente/unos/unos";
 import "./App.css";
@@ -13,7 +14,8 @@ this.state={
   naziv:"Inicijalni3",tekst:'"At vero eos et accusamus m delias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."',autor:'Marko'}],
 naziv:"",
 tekst:"",
-autor:""}
+autor:"",
+datum:""}
   }
 
   //event listeneri za polja
@@ -42,13 +44,21 @@ if(i==kljuc){
   break;};};
 this.setState({blogovi:niz});
    }
+   datum=()=>{
+    var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+
+return (day + "/" + month + "/" + year);
+   }
     submit=()=>{
       if(this.state.naziv=='' || this.state.tekst=='' || this.state.autor==''){
         alert('molimo vas popunite sva polja');
       }
       else{
       let noviniz=[...this.state.blogovi];
-      noviniz.push({naziv:this.state.naziv,tekst:this.state.tekst,autor:this.state.autor,id:this.state.blogovi.length+1});
+      noviniz.push({naziv:this.state.naziv,tekst:this.state.tekst,autor:this.state.autor,id:this.state.blogovi.length+1,datum:this.datum()});
       this.setState({blogovi:noviniz});
     }}
   render() {
