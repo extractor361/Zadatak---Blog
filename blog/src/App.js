@@ -61,6 +61,7 @@ return (day + "/" + month + "/" + year);
       noviniz.push({naziv:this.state.naziv,tekst:this.state.tekst,autor:this.state.autor,id:this.state.blogovi.length+1,datum:this.datum()});
       this.setState({blogovi:noviniz});
     }}
+    //komentar
   render() {
     return (
       <div style={{display:'flex',justifyContent:'center'}}>
